@@ -3,8 +3,8 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import time
 
-BASE_URL = "https://www.jobkorea.co.kr"
-SEARCH_URL = "https://www.jobkorea.co.kr/recruit/joblist?jobtype=I000"
+BASE_URL = "https://www.jobsite.co.kr"
+SEARCH_URL = "https://www.jobsite.co.kr/recruit/joblist?jobtype=I000"
 
 HEADERS = {"User-Agent": "Mozilla/5.0"}
 
@@ -56,8 +56,8 @@ def main():
     if len(all_jobs) > 0:
         df = pd.DataFrame(all_jobs)
         print(f"DataFrame 생성 완료: {df.shape}")
-        df.to_csv("jobkorea_it_jobs.csv", index=False, encoding="utf-8-sig")
-        print("크롤링 완료! 결과는 jobkorea_it_jobs.csv 에 저장됨.")
+        df.to_csv("jobsite_it_jobs.csv", index=False, encoding="utf-8-sig")
+        print("크롤링 완료! 결과는 jobsite_it_jobs.csv 에 저장됨.")
     else:
         print("수집된 채용정보가 없습니다.")
 
